@@ -26,7 +26,8 @@ abstract class Router
         $found = false;
 
         array_walk($this->routes, function ($route) use ($url, &$found) {
-            if($url == $route['route'])
+            if(($url == $route['route']) &&
+               (strtoupper($_SERVER['REQUEST_METHOD']) == strtoupper($route['method'])))
             {
                 if(isset($route['use'])) {
                     //Split $route['use'] and return one array with 'controller' and 'action'
@@ -83,7 +84,6 @@ abstract class Router
      */
     protected function getUrl()
     {
-        dd($_SERVER);
         return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     }
 }
