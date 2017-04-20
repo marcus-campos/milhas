@@ -3,6 +3,8 @@
 namespace Milhas\Route\Router;
 
 
+use Milhas\Route\Request\Request;
+
 abstract class Router
 {
     private $routes;
@@ -40,7 +42,11 @@ abstract class Router
 
                     //Run action
                     $action = $controllerAndAction['action'];
-                    $controller->$action();
+
+                    if(strtoupper($_SERVER['HTTP_CONTENT_TYPE']) == strtoupper('application/json'))
+                        $controller->$action(new Request());
+                    else
+                        $controller->$action();
                 }
                 else
                     $closure = $route['do'];
