@@ -1,4 +1,4 @@
 <?php
 
 //Init routes
-$route = new \Milhas\Route\BaseRouter();
+$route = new \Milhas\Http\Route\BaseRouter();

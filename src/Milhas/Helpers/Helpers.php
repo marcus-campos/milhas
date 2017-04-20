@@ -1,5 +1,19 @@
 <?php
 
+
+/**
+ * @param $class
+ * @return mixed
+ */
+function appMake($class)
+{
+    return $controller = new $class;
+}
+
+/**
+ * @param $input
+ * @param bool $collapse
+ */
 function dd($input, $collapse=false)
 {
     $recursive = function($data, $level=0) use (&$recursive, $collapse) {
