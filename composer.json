@@ -17,7 +17,7 @@
   },
   "autoload": {
     "files": [
-      "src/Helpers/Helpers.php"
+      "src/Milhas/Helpers/Helpers.php"
     ],
     "psr-4": {
       "Milhas\\": "src/Milhas"
