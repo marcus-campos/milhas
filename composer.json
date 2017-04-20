@@ -16,6 +16,9 @@
     "phpunit/phpunit": "~6.1"
   },
   "autoload": {
+    "files": [
+      "src/Helpers/Helpers.php"
+    ],
     "psr-4": {
       "Milhas\\": "src/Milhas"
     }
