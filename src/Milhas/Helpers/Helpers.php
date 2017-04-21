@@ -163,3 +163,11 @@ function databasePath($pathTo = '')
 {
     return str_replace('vendor/milhas/framework/src/Milhas/Helpers', 'database/', __DIR__).$pathTo;
 }
+
+function deleteFile($pathToFile)
+{
+    if (file_exists($pathToFile))
+        return unlink($pathToFile);
+    else
+        return false;
+}

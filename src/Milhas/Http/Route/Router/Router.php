@@ -28,8 +28,8 @@ abstract class Router
         $found = false;
 
         array_walk($this->routes, function ($route) use ($url, &$found) {
-            if($this->checkUrlAndMethod($url, $route))
-                $found = $this->boot($route);
+            if($result = $this->checkUrlAndMethod($url, $route))
+                $found = $this->boot($route, $result);
         });
 
         if($found == false)
@@ -40,8 +40,10 @@ abstract class Router
      * @param $route
      * @return bool
      */
-    public function boot($route)
+    public function boot($route, $result)
     {
+        unset($result['params'][0]);
+
         if(isset($route['use'])) {
             //Array with 'controller' and 'action'
             $controllerAndAction = $this->controllerAndAction($route);
@@ -53,9 +55,15 @@ abstract class Router
             $action = $controllerAndAction['action'];
 
             if(isset($_SERVER['HTTP_CONTENT_TYPE']) && strtoupper($_SERVER['HTTP_CONTENT_TYPE']) == strtoupper('application/json'))
-                echo htmlspecialchars(($controller->$action(new Request())), ENT_QUOTES);
+                if($result['result'] > 0)
+                    echo htmlspecialchars(($controller->$action(new Request(), $result['params'])), ENT_QUOTES);
+                else
+                    echo htmlspecialchars(($controller->$action(new Request())), ENT_QUOTES);
             else
-                echo htmlspecialchars(($controller->$action()), ENT_QUOTES);
+                if($result['result'] > 0)
+                    echo htmlspecialchars(($controller->$action($result['params'])), ENT_QUOTES);
+                else
+                    echo htmlspecialchars(($controller->$action()), ENT_QUOTES);
         }
         else
             $closure = $route['do'];
@@ -64,18 +72,41 @@ abstract class Router
         return true;
     }
 
+
     /**
      * @param $url
      * @param $route
-     * @return bool
+     * @return array|bool
      */
     public function checkUrlAndMethod($url, $route)
     {
-        if(($url == $route['route']) &&
+        $result = $this->checkUrl($route['route'], $url);
+
+        if(($url == $route['route'] or  $result['result'] > 0) &&
             (strtoupper($_SERVER['REQUEST_METHOD']) == strtoupper($route['method'])))
-            return true;
+            return $result;
         else
             return false;
+
+    }
+
+    /**
+     * @param string $toFind
+     * @param $subject
+     * @return array
+     */
+    private function checkUrl(string $toFind, $subject)
+    {
+        preg_match_all('/\{([^\}]*)\}/', $toFind, $variables);
+        $regex = str_replace('/', '\/', $toFind);
+        foreach ($variables[1] as $k=>&$variable) {
+            $as = explode(':', $variable);
+            $replacement = $as[1] ?? '([a-zA-Z0-9\-\_\ ]+)';
+            $regex = str_replace($variables[$k], $replacement, $regex);
+        }
+        $regex = preg_replace('/{([a-zA-Z]+)}/', '([a-zA-Z0-9]+)', $regex);
+        $result = preg_match('/^'.$regex.'$/', $subject, $params);
+        return compact('result', 'params');
     }
 
     /**
