@@ -7,7 +7,7 @@ class Conn
 {
     public static function getDb()
     {
-        $config = include_once "../config/db.php"; //Get configs
+        $config = include_once configPath('db.php'); //Get configs
 
         if($config['driver'] == 'mysql')
             return new \PDO("{$config['driver']}:host={$config['host']};dbname={$config['database']}","{$config['user']}","{$config['password']}");

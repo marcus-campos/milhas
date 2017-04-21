@@ -136,6 +136,32 @@ function dd($input, $collapse=false)
     die;
 }
 
+/**
+ * @param string $pathTo
+ * @return string
+ */
+function rootPath($pathTo = '')
+{
+    return str_replace('vendor/milhas/framework/src/Milhas/Helpers', '', __DIR__).$pathTo;
+}
+
+/**
+ * @param string $pathTo
+ * @return string
+ */
+function appPath($pathTo = '')
+{
+    return str_replace('vendor/milhas/framework/src/Milhas/Helpers', 'App/', __DIR__).$pathTo;
+}
+
+/**
+ * @param string $pathTo
+ * @return string
+ */
+function configPath($pathTo = '')
+{
+    return str_replace('vendor/milhas/framework/src/Milhas/Helpers', 'config/', __DIR__).$pathTo;
+}
 
 /**
  * @param string $pathTo
@@ -164,6 +190,10 @@ function databasePath($pathTo = '')
     return str_replace('vendor/milhas/framework/src/Milhas/Helpers', 'database/', __DIR__).$pathTo;
 }
 
+/**
+ * @param $pathToFile
+ * @return bool
+ */
 function deleteFile($pathToFile)
 {
     if (file_exists($pathToFile))

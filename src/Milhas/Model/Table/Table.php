@@ -56,8 +56,7 @@ abstract class Table
         $query = "DELETE FROM {$this->table} WHERE id=:id";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(":id", $id);
-        $stmt->execute();
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $stmt->execute();
     }
 
     /**
@@ -82,14 +81,14 @@ abstract class Table
      * @param $values
      * @return mixed
      */
-    public function insert($values)
+    public function save($values)
     {
         $query = "INSERT INTO {$this->table} ({$this->fillableString()}) VALUES ({$this->bindString($values)})";
 
         $stmt = $this->db->prepare($query);
         $stmt->execute($values);
 
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $this->find($this->db->lastInsertId());
     }
 
     /**

@@ -34,7 +34,7 @@ abstract class Render
             $action = str_replace(".","//", $action); //Replace . to //
 
         //Include view
-        include_once "../App/Views/".$action.".phtml";
+        include_once rootPath("App/Views/".$action.".phtml");
     }
 
     private function compact(array $params)
