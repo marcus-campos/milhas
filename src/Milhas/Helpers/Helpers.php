@@ -132,4 +132,34 @@ function dd($input, $collapse=false)
     };
 
     call_user_func($recursive, $input);
+
+    die;
+}
+
+
+/**
+ * @param string $pathTo
+ * @return string
+ */
+function publicPath($pathTo = '')
+{
+    return str_replace('vendor/milhas/framework/src/Milhas/Helpers', 'public/', __DIR__).$pathTo;
+}
+
+/**
+ * @param string $pathTo
+ * @return mixed
+ */
+function storagePath($pathTo = '')
+{
+    return str_replace('vendor/milhas/framework/src/Milhas/Helpers', 'storage/', __DIR__).$pathTo;
+}
+
+/**
+ * @param string $pathTo
+ * @return mixed
+ */
+function databasePath($pathTo = '')
+{
+    return str_replace('vendor/milhas/framework/src/Milhas/Helpers', 'database/', __DIR__).$pathTo;
 }

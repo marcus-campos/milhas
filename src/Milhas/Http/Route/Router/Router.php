@@ -52,7 +52,7 @@ abstract class Router
             //Get action
             $action = $controllerAndAction['action'];
 
-            if(strtoupper($_SERVER['HTTP_CONTENT_TYPE']) == strtoupper('application/json'))
+            if(isset($_SERVER['HTTP_CONTENT_TYPE']) && strtoupper($_SERVER['HTTP_CONTENT_TYPE']) == strtoupper('application/json'))
                 echo htmlspecialchars(($controller->$action(new Request())), ENT_QUOTES);
             else
                 echo htmlspecialchars(($controller->$action()), ENT_QUOTES);

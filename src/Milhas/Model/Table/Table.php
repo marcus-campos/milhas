@@ -7,6 +7,7 @@ abstract class Table
 {
     protected $db;
     protected $table;
+    protected $fillable;
 
     /**
      * Table constructor.
@@ -77,4 +78,63 @@ abstract class Table
         return $stmt;
     }
 
+    /**
+     * @param $values
+     * @return mixed
+     */
+    public function insert($values)
+    {
+        $query = "INSERT INTO {$this->table} ({$this->fillableString()}) VALUES ({$this->bindString($values)})";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->execute($values);
+
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * @param $values
+     * @return string
+     */
+    public function bindString($values)
+    {
+        $bindString = '';
+        foreach ($values as $key => $value) {
+            if ($bindString == '')
+                $bindString .= ':'.$key;
+            else
+                $bindString .= ', :'.$key;
+        }
+
+        return $bindString;
+    }
+
+    /**
+     * @param $stmt
+     * @param $values
+     * @return mixed
+     */
+    public function bindParams($stmt, $values)
+    {
+        foreach ($values as $key => $value)
+            $stmt->bindParam(":".$key, $value);
+
+        return $stmt;
+    }
+
+    /**
+     * @return string
+     */
+    public function fillableString()
+    {
+        $fillableString = '';
+        foreach ($this->fillable as $value) {
+            if ($fillableString == '')
+                $fillableString .= $value;
+            else
+                $fillableString .= ', ' . $value;
+        }
+
+        return $fillableString;
+    }
 }
