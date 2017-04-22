@@ -6,15 +6,15 @@ Mini framework desenvolvido para para demonstração de conhecimento e execuçã
 ---
 # Conteúdo
 
-- [Controllers](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/installation/README.md)
-    - BaseController e sua função
-- [Models](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/configuration/README.md)
+- [Controllers](https://github.com/marcus-campos/milhas/blob/master/documentation/controllers/README.md)
+    - Controller e sua função
+- [Models](https://github.com/marcus-campos/milhas/blob/master/documentation/models/README.md)
     - Abstração da camada de banco de dados baseado em active records
-- [Views](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/server/README.md)
+- [Views](https://github.com/marcus-campos/milhas/blob/master/documentation/views/README.md)
     - Renderizadores de HTML
-- [Http](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/usage/README.md)
+- [Http](https://github.com/marcus-campos/milhas/blob/master/documentation/http/README.md)
     - Funções HTTP e pacotes de captura
-- [Helpers](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/tests/README.md)
+- [Helpers](https://github.com/marcus-campos/milhas/blob/master/documentation/helpers/README.md)
     - Funções auxiliares.
     
 # Desafio Max Milhas
