@@ -9,12 +9,12 @@ Para facilitar o controle deste protocolo foi desenvolvido alguns classes e fun�
 
 Possui 2 funções para captura de formulários recebidos através de uma rota.
 
-####São eles:
+#### São eles:
 
 - `Input::file('arquivo')`: É utilizado para captura de arquivos recebidos por uma rota.
 - `Input::file('valor')`: É utilizado para captura de valores recebidos por uma rota.
 
-####Como importar:
+#### Como importar:
 ```
 use Milhas\Http\Input\Input;
 ```
@@ -25,7 +25,7 @@ Possui 1 função para redirecionamento de páginas:
 
 - `Redirect::to('/')`: Redireciona para a rota desejada.
 
-####Como importar:
+#### Como importar:
 
 ```
 use Milhas\Http\Redirect\Redirect;
@@ -37,7 +37,7 @@ Possui 1 função para capturar dados recebidos por uma request JSON:
 
 - `$request = new Request(); $request->all();`: Captura todos os dados em JSON recebidos por uma rota.
  
-####Como importar:
+#### Como importar:
 
 ```
 use Milhas\Http\Request\Request;
