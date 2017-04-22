@@ -1,6 +1,6 @@
 # Milhas Framework
 
-Mini framework desenvolvido para para demonstração de conhecimento e execução do teste proposto.
+Mini framework desenvolvido para demonstração de conhecimento e de execução do teste proposto.
 
 
 ---
@@ -20,7 +20,7 @@ Mini framework desenvolvido para para demonstração de conhecimento e execuçã
 # Desafio Max Milhas
 
 
-Desafio proposto demonstração de conhecimento em desenvolvimento back-end em linguagem de programação PHP.
+Desafio proposto: Demonstração de conhecimento em desenvolvimento back-end com a linguagem de programação PHP.
 
-O resultado final pode ser acesso neste [link](http://maxmilhas.devyzi.com).
+O resultado final pode ser acessado neste [link](http://maxmilhas.devyzi.com).
 O código fonte pode ser acessado neste [link](https://github.com/marcus-campos/max-milhas-challenge)

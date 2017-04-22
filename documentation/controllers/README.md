@@ -1,6 +1,6 @@
 # Controller
 
-Um controlador (controller) envia comandos para o modelo para atualizar o seu estado (por exemplo, editando um documento). O controlador também pode enviar comandos para a visão associada para alterar a apresentação da visão do modelo (por exemplo, percorrendo um documento).
+Um controlador (controller) envia comandos para o modelo para atualizar o seu estado (por exemplo, editando um documento). O controlador também pode enviar comando para a visão associada com a finalidade de alterar a apresentação do modelo (por exemplo, percorrendo um documento).
 
 [Fonte](https://pt.wikipedia.org/wiki/MVC)
 

@@ -3,7 +3,7 @@
 O Hypertext Transfer Protocol (HTTP), em português Protocolo de Transferência de Hipertexto, é um protocolo de comunicação (na camada de aplicação segundo o Modelo OSI) utilizado para sistemas de informação de hipermídia, distribuídos e colaborativos. Ele é a base para a comunicação de dados da World Wide Web.
 [Fonte](https://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
 
-Para facilitar o controle deste protocolo foi desenvolvido alguns classes e funções.
+Para facilitar o controle desse protocolo foi desenvolvido algumas classes e funções.
 
 ## Input
 

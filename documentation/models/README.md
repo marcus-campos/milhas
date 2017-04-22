@@ -1,6 +1,6 @@
 # Models
 
-Um modelo (model) armazena dados e notifica suas visões e controladores associados quando há uma mudança em seu estado. Estas notificações permitem que as visões produzam saídas atualizadas e que os controladores alterem o conjunto de comandos disponíveis. Uma implementação passiva do MVC monta estas notificações, devido a aplicação não necessitar delas ou a plataforma de software não suportá-las.
+Um modelo (model) armazena dados e notifica suas visões e controladores associados quando há uma mudança em seu estado. Estas notificações permitem que as visões produzam saídas atualizadas e que os controladores alterem o conjunto de comandos disponíveis. Uma implementação passiva do MVC monta essas notificações, devido à aplicação não necessitar delas ou a plataforma de software não suportá-las.
 
 [Fonte](https://pt.wikipedia.org/wiki/MVC)
 
@@ -8,7 +8,7 @@ Um modelo (model) armazena dados e notifica suas visões e controladores associa
 
 O Milhas framework conta com uma clase extendível que herda funções para a manipulação de sua base de dados.
 
-Para fazer o uso destas funções, basta extender seu model como no exemplo abaixo:
+Para fazer o uso dessas funções, basta extender seu model como no exemplo abaixo:
 
 ```
 <?php
