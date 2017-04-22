@@ -26,11 +26,11 @@ class GalleryController extends Controller
 }
 ```
 
-#Funções herdadas
+# Funções herdadas
 
 Após extender sua classe você irá herdar algumas funções para facilitar a exibição de views a partir de seu controller.
 
-###Render
+## Render
 
 Renderiza views geralmente escritas em HTML. Você poderá dividir sua interface em views e exibi-las como no exemplo abaixo:
 

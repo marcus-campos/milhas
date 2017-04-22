@@ -30,12 +30,12 @@ class Gallery extends BaseModel
 }
 ```
 
-#Funções herdadas
+# Funções herdadas
 
 Após extender sua classe você irá herdar funções e variáveis para facilitar a manipulação de sua base de dados a partir de seu model.
 
 
-##Varáveis de configuração
+## Varáveis de configuração
 
 - `protected $table = 'gallery';`: Informa ao BaseModel qual a tabela que seu model se refere.
 - `protected $fillable = [
@@ -63,7 +63,7 @@ class GalleryController extends Controller
 }
 ```
 
-##Funções
+## Funções
 
 - `$this->all()`: Retorna todos os valores armazenados na tabela.
 - `$this->find($id)`: Busca e retorna o valor correspondente ao `$id` passado para a função.
