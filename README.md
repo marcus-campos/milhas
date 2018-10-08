@@ -24,3 +24,7 @@ Desafio proposto: Demonstração de conhecimento em desenvolvimento back-end com
 
 O resultado final pode ser acessado neste [link](http://maxmilhas.devyzi.com).
 O código fonte pode ser acessado neste [link](https://github.com/marcus-campos/max-milhas-challenge)
+
+# Contact
+
+Marcus Campos - campos.v.marcus@gmail.com
